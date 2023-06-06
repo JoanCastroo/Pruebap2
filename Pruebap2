@@ -59,4 +59,19 @@ int main() {
     calcularPromedioGrupo(alumnos[0].calificaciones, promediosProgresos);
 
     int indiceMaximo = encontrarMaximoPromedio(alumnos);
+    printf("\nPromedio de calificaciones de cada alumno durante el semestre:\n");
+    for (int i = 0; i < NUM_ALUMNOS; i++) {
+        printf("Alumno %d: %.2f\n", i + 1, alumnos[i].promedio);
+    }
+
+    printf("\nNota promedio del grupo para cada progreso:\n");
+    for (int j = 0; j < NUM_PROGRESOS; j++) {
+        printf("Progreso %d: %.2f\n", j + 1, promediosProgresos[j]);
+    }
+
+    printf("\nAlumno con el mayor promedio de calificación durante el semestre:\n");
+    printf("Alumno %d\n", indiceMaximo + 1);
+
+    return 0;
+}
 
