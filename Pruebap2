@@ -4,3 +4,17 @@
 
 #define NUM_ALUMNOS 23
 #define NUM_PROGRESOS 3
+
+typedef struct {
+    float calificaciones[NUM_PROGRESOS];
+    float promedio;
+} Alumno;
+
+
+void calcularPromedioAlumno(Alumno* alumno) {
+    float suma = 0;
+    for (int i = 0; i < NUM_PROGRESOS; i++) {
+        suma += alumno->calificaciones[i];
+    }
+    alumno->promedio = suma / NUM_PROGRESOS;
+}
