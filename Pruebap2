@@ -18,3 +18,25 @@ void calcularPromedioAlumno(Alumno* alumno) {
     }
     alumno->promedio = suma / NUM_PROGRESOS;
 }
+
+
+void calcularPromedioGrupo(float calificaciones[][NUM_PROGRESOS], float promediosProgresos[]) {
+    for (int j = 0; j < NUM_PROGRESOS; j++) {
+        float suma = 0;
+        for (int i = 0; i < NUM_ALUMNOS; i++) {
+            suma += calificaciones[i][j];
+        }
+        promediosProgresos[j] = suma / NUM_ALUMNOS;
+    }
+}
+
+
+int encontrarMaximoPromedio(Alumno alumnos[]) {
+    int indiceMaximo = 0;
+    for (int i = 1; i < NUM_ALUMNOS; i++) {
+        if (alumnos[i].promedio > alumnos[indiceMaximo].promedio) {
+            indiceMaximo = i;
+        }
+    }
+    return indiceMaximo;
+}
